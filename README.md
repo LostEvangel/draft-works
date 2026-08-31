@@ -1,8 +1,20 @@
 # draft-works · 文稿工坊
 
-中文文章编辑审阅的 Claude Code skill 合集。
+中文写作相关的 Agent Skill 合集。各 skill 相互独立。
 
 ## 包含的 skill
+
+### writing-craft — 写作能力沉淀与多方向优化
+
+沉淀已采纳的**硬规则**（core 底盘 + 方向）；多方向优化建议单独存放；默认不改稿；可导出跨平台提示词。
+
+触发词：`优化草稿` `写作能力` `沉淀建议` `采纳这条` `导出提示词` `writing-craft`
+
+```bash
+cd writing-craft
+uv run scripts/install_links.py          # 软链到 ~/.agents、~/.cursor、~/.claude
+uv run scripts/export_prompt.py --directions lyrical
+```
 
 ### editorial-review — 编辑审阅
 
@@ -16,22 +28,20 @@
 
 触发词：`帮我改改这篇文章` `revision` `看看这篇稿子`
 
-## 区别
+### literary-compare — 文学对照讲评
 
-| skill | 角色 | 谁动手改 | 适用场景 |
-|-------|------|----------|----------|
-| editorial-review | 审稿人 | 用户自己 | 需要第三方客观判断 |
-| revision-article | 作者 | AI（以作者身份） | 有自己的判断，需要改稿人手 |
+对比优化前/优化后两个版本，讲清改动思路与可迁移能力。
+
+触发词：`对比两个版本` `优化前后` `文学老师` `讲评改稿`
 
 ## 安装
 
 ```bash
-# 进入你的项目目录
-cd your-project
+# 进入你的项目目录后，复制或软链需要的 skill
+cp -r draft-works/editorial-review ~/.claude/skills/
+cp -r draft-works/revision-article ~/.claude/skills/
 
-# 复制需要的 skill
-cp -r draft-works/editorial-review .claude/skills/
-cp -r draft-works/revision-article .claude/skills/
+# writing-craft 推荐用安装脚本（同时链到 agents / cursor / claude）
+cd draft-works/writing-craft
+uv run scripts/install_links.py
 ```
-
-重启 Claude Code 后即可使用。
