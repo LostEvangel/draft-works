@@ -18,6 +18,7 @@ description: >-
 | 路径 | 用途 |
 |------|------|
 | `directions.md` | 方向 / core 分层与中英映射 |
+| `corpus.md` | 定稿语料指针（如 `D:\work\个人\文章`） |
 | `capabilities/core/` | 全场景底盘（禁忌与底线） |
 | `capabilities/<方向>/` | 方向专属能力 |
 | `capabilities/index.md` | 能力索引 |
@@ -32,7 +33,7 @@ description: >-
 
 ### A. 优化草稿（默认）
 
-1. 读草稿；加载 `capabilities/core/` + `index.md`；按相关方向打开能力文件。
+1. 读草稿；加载 `capabilities/core/` + `index.md`；按相关方向打开能力文件。需要口吻范例时对照 `corpus.md` 中的定稿（勿整篇粘贴）。
 2. 用 `references/ai-drift-checklist.md` 扫一遍常见跑偏（不必全文贴出）。
 3. 推荐 2～3 个**写作方向**（不含 core），等用户确认。
 4. 写可执行建议 → `suggestions/YYYY-MM-DD-简题.md`（可用 `new_suggestion.py`）。
